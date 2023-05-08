@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="IMG/pata.png">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <script>
+        let url='https://api.thedogapi.com/v1/breeds';
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => mostrarData(data))
+            .catch(error=>console.log(error))
+        
+        const mostrarData=(data)=>{
+            console.log(data)
+            let body=""
+            for(var i=0; i<10; i++)
+            {
+                body+=`<tr>
+                    <td style="border: 1px solid black;">${data[i].id}</td>
+                    <td style="border: 1px solid black;">${data[i].name}</td>
+                    <td style="border: 1px solid black;">${data[i].temperament}</td>
+                    <td style="border: 1px solid black;"><img src=${data[i].image.url} style width="200px" height=150px></td> 
+                    </tr>`
+
+                    
+            }
+            document.getElementById('data').innerHTML=body
+        }
+
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-light" style="background-color: aquamarine ;">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#opciones">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <a class="navbar-brand" href="#" style="background-color: aquamarine;">
+                    <img src="img/Logo.jpg" width="30px" height="30px">
+                </a>
+    
+                <div class="collapse navbar-collapse" id="opciones">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="Inicio.html" target>Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Info.html"target>Sobre Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Galeria.html"target >Galeria</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="categoria.html"target >Categoria de Perros</a>
+                        </li>
+                            <section class="boton-login">
+                                <a href="formulario.html" class="fa fa-sign-in"></a>
+                    </ul>
+                </div>
+            </nav>
+        </header>   
+    <div class="container cosas">
+        <h2>Razas y sus cualidades</h2>
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    
+                    <th style="border: 1px solid black; ">Id</th>
+                    <th style="border: 1px solid black; ">Nombre</th>
+                    <th style="border: 1px solid black; ">Origen</th>
+                    <th style="border: 1px solid black; ">Imagen</th>
+                </tr>
+            </thead>
+            <tbody id="data">
+
+            </tbody>
+        </table>
+    </div>
+</head>
+<body>
+    
+</body>
+<footer>     
+    <div class="row">   <!--creamos filas-->
+    
+        <div class="col-sm-4" style="background-color: rgb(49, 18, 187);">           <!--creamos columnas-->
+            <ul class="footer-menu-container">
+                <p class="contact">Contáctanos<p>
+                    <li class="menu-item">  +(56)986610328</li>
+                    <li class="menu-item">  +(56)245553213</li>
+                <p class="contact2">Otros medios</p>
+                    <li class="menu-item">  ro.plaza@duocuc.cl</li>
+                    <li class="menu-item">  aeonfullyo@gmail.com</li>
+                    <section class="buttons">
+                        <a href="#" class="fa fa-facebook"></a>
+                        <a href="#" class="fa fa-twitter"></a>
+                        <a href="#" class="fa fa-linkedin"></a>
+                        <a href="#" class="fa fa-youtube"></a>
+                        <a href="#" class="fa fa-instagram"></a>
+                    </section>
+            </ul>
+        </div>
+
+        <div class="col-sm-4"     style="background-color:blue">           <!--creamos columnas-->
+            <ul class="footer-menu-container">
+                <p class="contact">Información<p>
+                    <li class="menu-item"> Políticas de despacho </li>
+                    <li class="menu-item"> Como encontrarnos.</li>
+                    <li class="menu-item"> Medios de Pago</li>           
+            </ul>
+        </div>
+
+        <div class="col-sm-4" style="background-color: darkturquoise;">           <!--creamos columnas-->
+            <ul class="footer-menu-container">
+                <p class="contact">Otros<p>
+                    <li class="menu-item">  Precios</li>
+                    <li class="menu-item">  Rebajas</li>
+                    <li class="menu-item">  Ventas al por mayor</li>
+                    <li class="menu-item">  Horarios de atencion</li>
+                    <li class="menu-item">  Reclamos</li>
+                    <li class="menu-item">  Productos</li>
+            </ul>
+        </div>
+    <div class="copy" style="margin-left:14px;">Copyright © Todos los derechos reservados.</div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>          
+</html>
