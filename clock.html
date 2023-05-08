@@ -2,39 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link rel="icon" type="image/x-icon" href="IMG/pata.png">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Document</title>
-    <script>
-        let url='https://api.thedogapi.com/v1/breeds';
 
-        fetch(url)
-            .then(response => response.json())
-            .then(data => mostrarData(data))
-            .catch(error=>console.log(error))
-        
-        const mostrarData=(data)=>{
-            console.log(data)
-            let body=""
-            for(var i=0; i<10; i++)
-            {
-                body+=`<tr>
-                    <td style="border: 1px solid black;">${data[i].id}</td>
-                    <td style="border: 1px solid black;">${data[i].name}</td>
-                    <td style="border: 1px solid black;">${data[i].temperament}</td>
-                    <td style="border: 1px solid black;"><img src=${data[i].image.url} style width="200px" height=150px></td> 
-                    </tr>`
-
-                    
-            }
-            document.getElementById('data').innerHTML=body
-        }
-
-    </script>
 </head>
 <body>
     <header>
@@ -64,35 +38,18 @@
                         </li>
                             <section class="boton-login">
                                 <a href="fomulariolog.html" class="fa fa-sign-in"></a>
-                                <div class="container-clock" style="padding-left: 50px;">
-                                    <h1 id="time">00:00:00</h1>
-                                </div>
-                                <script src="js/clock.js"></script>
-                            </ul>
+                    </ul>
                 </div>
             </nav>
         </header>   
-    <div class="container cosas">
-        <h2>Razas y sus cualidades</h2>
-        
-        <table class="table">
-            <thead>
-                <tr>
-                    
-                    <th style="border: 1px solid black; ">Id</th>
-                    <th style="border: 1px solid black; ">Nombre</th>
-                    <th style="border: 1px solid black; ">Atributos</th>
-                    <th style="border: 1px solid black; ">Imagen</th>
-                </tr>
-            </thead>
-            <tbody id="data">
-
-            </tbody>
-        </table>
+    <div class="container" style="padding-top: 50px;"></div>
+    <div class="container-clock">
+        <h1 id="time">00:00:00</h1>
+        <p id="date">date</p>
     </div>
-</head>
-<body>
-    
+
+    <script src="js/clock.js"></script>
+    <div class="container" style="padding-bottom: 135px;"> </div>
 </body>
 <footer>     
     <div class="row">   <!--creamos filas-->
@@ -116,7 +73,7 @@
         </div>
 
         <div class="col-sm-4"     style="background-color:blue">           <!--creamos columnas-->
-            <ul class="footer-menu-container" style="padding-left: 5px;">
+            <ul class="footer-menu-container">
                 <p class="contact">Información<p>
                     <li class="menu-item"> Políticas de despacho </li>
                     <li class="menu-item"> Como encontrarnos.</li>
@@ -124,20 +81,17 @@
             </ul>
         </div>
 
-        <div class="col-sm" style="background-color: darkturquoise;">           <!--creamos columnas-->
-            <ul class="footer-menu-container" style="padding-left: 5px;">
+        <div class="col-sm-4" style="background-color: darkturquoise;">           <!--creamos columnas-->
+            <ul class="footer-menu-container">
                 <p class="contact">Otros<p>
-                    <li class="menu-item">   Precios</li>
-                    <li class="menu-item">   Rebajas</li>
-                    <li class="menu-item">   Ventas al por mayor</li>
-                    <li class="menu-item">   Horarios de atencion</li>
-                    <li class="menu-item">   Reclamos</li>
-                    <li class="menu-item">   Productos</li>
+                    <li class="menu-item">  Precios</li>
+                    <li class="menu-item">  Rebajas</li>
+                    <li class="menu-item">  Ventas al por mayor</li>
+                    <li class="menu-item">  Horarios de atencion</li>
+                    <li class="menu-item">  Reclamos</li>
+                    <li class="menu-item">  Productos</li>
             </ul>
         </div>
     <div class="copy" style="margin-left:14px;">Copyright © Todos los derechos reservados.</div>
 </footer>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>          
 </html>
